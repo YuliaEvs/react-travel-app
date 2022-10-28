@@ -1,0 +1,22 @@
+.explore-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    position: relative;
+}
+
+.explore-container::before { 
+    content: "";
+    background-image: url("../../Img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.1;
+}

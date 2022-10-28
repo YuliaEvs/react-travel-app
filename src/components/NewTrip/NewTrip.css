@@ -1,0 +1,80 @@
+.newTrip-main { 
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    /* background-image: url("../../Img/background.jpg");
+    opacity: 0.1;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.newTrip-main::before { 
+    content: "";
+    position: absolute;
+    background-image: url("../../Img/background.jpg");
+    opacity: 0.1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.newTrip-container {
+    margin: 0;
+    padding: 20px 16px 0;
+    max-width: 600px;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.90);
+    color: rgba(27, 206, 209);
+    position: relative;
+}
+
+.newTripForm-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 16px 0;
+
+}
+
+.newTripForm {
+    text-align: center;
+    align-items: center;
+    padding: 25px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+input {
+    background-color: #ffffff8c;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.input-note {
+    padding: 50px;
+    white-space: normal;
+}
+
+.newTrip-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px;
+    background-color:fff;
+    transition: all 0.3s ease 0s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+  
+.newTrip-btn:hover {
+      background-color:rgba(250, 164, 14, 0.5);
+      transition: all 0.3s ease 0s;
+    }

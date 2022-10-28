@@ -1,0 +1,41 @@
+
+.tripHistory-main { 
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+}
+
+.tripHistory-main::before { 
+    content: "";
+    position: absolute;
+    background-image: url("../../Img/background.jpg");
+    opacity: 0.1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.tripList-container {
+    margin: 0;
+    background-color: rgb(255, 255, 255, .9);
+    width: 600px;
+    height: 400px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    justify-content:center;
+    justify-items: flex-start;
+    color: rgb(40, 40, 40);
+    border-radius: 0.5rem;
+    border: 5px;
+    position: relative;
+    color: rgba(27, 206, 209);
+}
+

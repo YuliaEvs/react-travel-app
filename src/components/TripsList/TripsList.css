@@ -1,0 +1,96 @@
+/* .tripList-container {
+    padding: 20px 16px 0;
+
+} */
+
+.tripsList-container {
+    margin: 0;
+    background-color: rgb(255, 255, 255, .9);
+    width: 600px;
+    justify-content:center;
+    color: rgb(40, 40, 40);
+    border-radius: 0.5rem;
+    border: 5px;
+    position: relative;
+    color: rgba(27, 206, 209);
+    list-style-position: inside;
+    
+  }
+  
+.tripsList-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 16px 0;
+    display: flexbox;
+}
+
+.tripsList-box {
+    border: 2px;
+    display: grid;
+    grid-template-columns: 2fr, 1fr, 1fr;
+}
+
+.item-box {
+    border: 2px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+
+}
+
+.newTrip-btn {
+    box-sizing: content-box;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(250, 164, 14, 0.2)orange;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: all 0.3s ease 0s;
+    color: black;
+}
+
+  
+.newTrip-btn:hover {
+      background-color:rgba(250, 164, 14, 0.5);
+      transition: all 0.3s ease 0s;
+    }
+
+.edit-btn {
+    color: green;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 1px solid lighten(gray, 24%);
+    height: 48px;
+    padding: 0 24px 0 16px;
+    letter-spacing: .25px;
+    border-radius: 24px;
+}
+
+.edit-btn:hover {
+    background-color: lighten(green, 48%); 
+}
+
+.delete-btn {
+    color: red;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 1px solid lighten(gray, 24%);
+    height: 48px;
+    padding: 0 24px 0 16px;
+    letter-spacing: .25px;
+    border-radius: 24px;
+}
+
+.delete-btn:hover {
+    background-color: lighten(red, 48%); 
+}
+
+/* ul {
+    list-style-position: inside;
+} */
+

@@ -1,0 +1,32 @@
+
+.home-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+}
+
+.home-container::before { 
+  content: "";
+  position: absolute;
+  background-image: url("../../Img/background.jpg");
+  opacity: 0.1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+
+
+/* .greeting {
+    text-align: end;
+    font-size: 30px;
+    justify-content: end;
+  } */
