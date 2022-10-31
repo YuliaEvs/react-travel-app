@@ -10,16 +10,19 @@ export default function TripsList (props) {
                 <div className='tripsList-box'>
                     {/* <ul> */}
                         <div className='item-box'>
-                            <span>Hawaii
-                                <button className='edit-btn'>Edit</button>
-                                <button className='delete-btn'>Delete</button>
-                            </span>
+                            <span className='name-box'>Hawaii</span>
+                                <div className='btn-div'>
+                                    <button className='edit-btn'>Edit</button>
+                                    <button className='remove-btn'>Remove</button>
+                                </div>
                         </div>
                         <div className='item-box'>
-                            <li>Alaska
-                                <button className='edit-btn'>Edit</button>
-                                <button className='delete-btn'>Delete</button>
-                            </li>
+                            <span className='name-box'>Alaska</span>
+                                <div className='btn-div'>
+                                    <button className='edit-btn'>Edit</button>
+                                    <button className='remove-btn'>Remove</button>
+                                </div>
+                            
                         </div>
                         <li className='item-box'>
                             <a href={`/trips/${ListItem}/details`}>{props.name}</a>

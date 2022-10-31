@@ -1,5 +1,6 @@
 import { Component } from 'react';
 // Add this import
+import { Navigate } from 'react-router-dom';
 import { signUp } from '../../utilities/users-service';
 import { Link  } from 'react-router-dom';
 import './SignUpForm.css'
@@ -37,7 +38,7 @@ export default class SignUpForm extends Component {
             //  Baby step! 
             // console.log(this.props);
              this.props.setUser(user);
-
+              <Navigate to='/home'/>
         } catch {
           // An error occurred
           this.setState({ error: 'Sign Up Failed - Try Again' });

@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+// import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+import { logOut } from '../utilities/users-service';
 import './NavBar.css';
 
-export default function NavBar (props) {
-// const [show, setShow] = useState (true)
+export default function NavBar ({ user, setUser }) {
+
+    function handleLogOut() {
+      logOut();
+      setUser(null);
+      // navigate('/');
+    } localStorage.removeItem('token');
+
   return (
 
     <nav className='nav'>
@@ -14,7 +22,7 @@ export default function NavBar (props) {
       <ul>
       <li><Link to="/home">Home</Link></li>
         <li>
-          <Link to="/trips">Trips History</Link>
+          <Link to="/trips/history">Trips History</Link>
         </li>
         <li>
           <Link to="/trips/new">New Trip</Link>
@@ -23,13 +31,10 @@ export default function NavBar (props) {
           <Link to="/explore">Explore</Link>
         </li>
 
-          <p>{`Hello ` + props?.user?.name}</p>
+          <p>{`Hello ` + user?.name}</p>
 
         <li>
-          <button className='out' onClick={() => {
-          localStorage.removeItem('token');
-          props.setUser(null);
-          }}>Log Out</button>
+          <button className='out' onClick={handleLogOut}>Log Out</button>
         </li>
       </ul>
     </nav>

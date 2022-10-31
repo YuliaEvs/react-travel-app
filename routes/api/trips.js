@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 const tripsCtrl = require('../../controllers/api/trips');
 
-// POST /api/trips
-router.post('/trips/new', tripsCtrl.create);
-
-router.post('/trips', tripsCtrl.create);
+// GET /api/trips/list
+router.get('/list', tripsCtrl.list);
+// GET /api/trips/history
+router.get('/history', tripsCtrl.history);
+// POST /api/trips/list/items/:id
+router.post('/list/items/:id', tripsCtrl.addToList);
 
 module.exports = router;

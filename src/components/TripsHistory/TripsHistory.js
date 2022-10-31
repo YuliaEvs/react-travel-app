@@ -3,7 +3,7 @@ import './TripsHistory.css'
 const React = require('react');
 
 
-export default function TripList (props) {
+export default function TripsHistory (props) {
 
 
     return (

@@ -4,7 +4,7 @@ import NavBar from './components/NavBar';
 import { Routes, Route  } from 'react-router-dom';
 import { getUser } from './utilities/users-service';
 import Home from './components/Home/Home';
-import TripList from './components/TripsHistory/TripsHistory';
+import TripsHistory from './components/TripsHistory/TripsHistory';
 import NewTrip from './components/NewTrip/NewTrip';
 import Explore from './components/Explore/Explore';
 import SignUpForm from './components/SingUpForm/SignUpForm';
@@ -22,9 +22,10 @@ function App() {
            <NavBar setUser={setUser} user={user}  />
              <Routes>
               <Route path="/home" element={<Home setUser={setUser} />} />
-              <Route path="/trips" element={<TripList />} />
+              <Route path="/trips/history" element={<TripsHistory />} />
               <Route path="/trips/new" element={<NewTrip />} />
               <Route path="/explore" element={<Explore />} />
+              <Route path="/*" element={<Home setUser={setUser} />} />
              </Routes>     
        </>
       :

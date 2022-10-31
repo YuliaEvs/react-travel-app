@@ -27,7 +27,7 @@ export async function login(userData) {
   if (response.status === 200) {
     return response.data
   } else {
-    throw new Error('Invalid Sign Up!')
+    throw new Error('Invalid Log In')
   }
 }
 

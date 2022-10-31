@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const Trip = require('./models/trip');
-const methodOverride = require('method-override');
+// const methodOverride = require('method-override');
 
 
 // Always require and configure near the top
@@ -13,7 +13,11 @@ require('dotenv').config();
 // Connect to the database
 require('./config/database');
 
+
 const app = express();
+
+// Check if token and create req.user
+// app.use(require('./config/checkToken'));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -23,24 +27,29 @@ app.use(express.json());
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
-// Configure to use port 3001 instead of 3000 during
-// development to avoid collision with React's dev server
-const port = process.env.PORT || 3001;
+// app.use(require('./config/checkToken'));
 
-app.listen(port, function() {
-  console.log(`Express app running on port ${port}`)
-});
-
-app.use(express.static(path.join(__dirname, 'build')));
-
-// Put API routes here, before the "catch all" route
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
+
+// Protect the API routes below from anonymous users
+// const ensureLoggedIn = require('./config/ensureLoggedIn');
+// app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
+// app.use('/api/trips', ensureLoggedIn, require('./routes/api/trips'));
+
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+const port = process.env.PORT || 3001;
+
+// Configure to use port 3001 instead of 3000 during
+// development to avoid collision with React's dev server
+app.listen(port, function() {
+  console.log(`Express app running on port ${port}`)
 });
 
 // -------------------------
@@ -72,7 +81,7 @@ app.get('/*', function(req, res) {
 // Method Override
 // -------------------------
 
-app.use(methodOverride('_method'));
+// app.use(methodOverride('_method'));
 
 // -------------------------
 // Trip Routes
