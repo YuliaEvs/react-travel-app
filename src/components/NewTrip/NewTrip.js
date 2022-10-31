@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { addNewTrip } from "../../actions";
+import { useDispatch } from "react-redux";
 import './NewTrip.css';
 
 export default function TripForm (props) {
@@ -7,10 +8,10 @@ export default function TripForm (props) {
     const [errorState, setErrorState] = useState('');
     const [formData, setFormData] = useState("");
     const dispatch = useDispatch();
-    const onFormSubmit = (e) => {
-        e.preventDefault();
+    const onFormSubmit = (event) => {
+        event.preventDefault();
         dispatch(addNewTrip(formData));
-        setText('');
+        setFormData('');
     }
  
     const handleSubmit = async (event) => {
@@ -19,7 +20,7 @@ export default function TripForm (props) {
       }
     
       const handleChange = (event) => {
-        setFormData(e.target.value);
+        setFormData(event.target.value);
         // setFormData({ ...formData, [event.target.name]: event.target.value });
       }
 

@@ -1,14 +1,11 @@
-import { addTrip, getAllTrips, toggleTripDone, updateTrip, deleteTrip } from '../../controllers/api/trips';
+import { addTrip, getAllTrips, updateTrip, deleteTrip } from '../../controllers/api/trips';
 import express, { Router } from 'express';
 
 const router = express.Router();
 
-// POST /api/trips/list/items/:id
 router.post('/trip/:id', addTrip);
-// GET /api/trips/history
-router.get('/trips/history', getAllTrips);
 
-router.get('/trips/:id', toggleTripDone);
+router.get('/trips', getAllTrips);
 
 router.put('/trips/:id', updateTrip);
 

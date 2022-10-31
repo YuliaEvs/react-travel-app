@@ -1,6 +1,23 @@
-const React = require('react');
+import { useState } from "react";
+import { toggleTrip, updateTrip } from "../../actions";
+import { deleteTrip } from "../../actions";
+import { useDispatch } from "react-redux";
 
 export default function ListItem ({ trip }) {
+
+  const [editing, setEditing] = useState(false);
+  const [text, setText] = useState(trip?.name);
+
+  const dispatch = useDispatch();
+
+  const onFormSubmit = (e) => {
+      e.preventDefault();
+
+      setEditing(prevState => !prevState);
+
+      dispatch(updateTrip(trip._id, text))
+  }
+
 
   return (
     <ul>

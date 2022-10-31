@@ -1,6 +1,5 @@
 import Trip from '../../models/trip';
 
-// Add an item to the list
 export const addTrip = async (req, res) => {
   try{
       const newTrip = await Trip.create({
@@ -26,33 +25,17 @@ export const getAllTrips = async (req, res) => {
   }
 }
 
-export const toggleTripDone = async (req, res) => {
+
+export const updateTrip = async (request, response) => {
   try {
-      const tripRef = await Trip.findById(req.params.id);
-
-      const trip = await Trip.findOneAndUpdate(
-          { _id: req.params.id },
-          { done: !tripRef.done }
-      )
-
-      await trip.save();
-
-      return response.status(200).json(trip);
-  } catch (error) {
-      return response.status(500).json(error.message);
-  }
-}
-
-export const updateTodo = async (request, response) => {
-  try {
-      await Todo.findOneAndUpdate(
+      await Trip.findOneAndUpdate(
           { _id: request.params.id },
           { data: request.body.data }
       )
 
-      const todo = await Todo.findById(request.params.id);
+      const trip = await Trip.findById(request.params.id);
 
-      return response.status(200).json(todo);
+      return response.status(200).json(trip);
   } catch (error) {
       return response.status(500).json(error.message);
   }

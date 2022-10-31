@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { ADDNEW_TRIP, GETALL_TRIP, TOGGLE_TRIP, UPDATE_TRIP, DELETE_TRIP } from './type';
+import { ADDNEW_TRIP, GETALL_TRIP, UPDATE_TRIP, DELETE_TRIP } from './type';
 
 const API_URL = 'http://localhost:3001';
 
@@ -23,17 +23,6 @@ export const getAllTrips = () => async (dispatch) => {
         console.log('Error while calling getAllTrips API ', error.message);
     }
 }
-
-export const toggleTrip = (id) => async (dispatch) => {
-    try {
-        const res = await axios.get(`${API_URL}/trips/${id}`);
-
-        dispatch({ type: TOGGLE_TRIP , payload: res.name });
-    } catch (error) {
-        console.log('Error while calling getAllTrips API ', error.message);
-    }
-}
-
 export const updateTrip = (id, name) => async (dispatch) => {
     try {
         const res = await axios.put(`${API_URL}/trips/${id}`, { name });
