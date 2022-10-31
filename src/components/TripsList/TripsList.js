@@ -11,7 +11,7 @@ export default function TripsList (props) {
                     {/* <ul> */}
                         <div className='item-box'>
                             <span className='name-box'>Hawaii</span>
-                                <div className='btn-div'>
+                                <div className='buttons-div'>
                                     <button className='edit-btn'>Edit</button>
                                     <button className='remove-btn'>Remove</button>
                                 </div>

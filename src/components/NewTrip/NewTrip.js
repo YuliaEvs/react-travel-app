@@ -1,23 +1,26 @@
 import { useState } from "react";
+import { addNewTrip } from "../../actions";
 import './NewTrip.css';
 
-export default function Trip (props) {
+export default function TripForm (props) {
 
     const [errorState, setErrorState] = useState('');
-    
-    const [formData, setFormData] = useState({
-        tripname: '',
-        days: '',
-        note: '',
-    })
-
+    const [formData, setFormData] = useState("");
+    const dispatch = useDispatch();
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+        dispatch(addNewTrip(formData));
+        setText('');
+    }
+ 
     const handleSubmit = async (event) => {
         event.preventDefault();
         
       }
     
       const handleChange = (event) => {
-        setFormData({ ...formData, [event.target.name]: event.target.value });
+        setFormData(e.target.value);
+        // setFormData({ ...formData, [event.target.name]: event.target.value });
       }
 
     return (
@@ -26,14 +29,14 @@ export default function Trip (props) {
         <div className="newTrip-main">
             <div className="newTrip-container">
                 <div className="newTripForm-title">New Trip</div>
-                    <form className='newTripForm' autoComplete="off">
+                    <form className='newTripForm' autoComplete="off" onSubmit={onFormSubmit}>
                     
-                        <label htmlFor='tripname'>Trip Name:</label>
+                        <label htmlFor='name'>Trip Name:</label>
                             <input
                                 onChange={handleChange}
                                 type="text"
-                                name="tripname"
-                                value={formData.tripname}
+                                name="name"
+                                value={formData.name}
                                 required
                             />
                         <label htmlFor='days'>Days:</label>
@@ -44,6 +47,14 @@ export default function Trip (props) {
                                 value={formData.days}
                                 required
                                 />
+                        <label htmlFor='createdAt:'>Created At:</label>
+                            <input
+                                onChange={handleChange}
+                                type="date"
+                                name="createdAt"
+                                value={formData.createdAt}
+                                required
+                                />    
                         <label htmlFor='note'>Note:</label>
                             <input className="input-note"
                                 onChange={handleChange}

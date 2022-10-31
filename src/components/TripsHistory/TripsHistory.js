@@ -7,10 +7,10 @@ export default function TripsHistory (props) {
 
 
     return (
-        <div className="tripHistory-main">
-            <div className='tripList-container'>
-                <div className='tripList-title'>All Trips with Details</div>
-                <div className='tripsListItem'></div>
+        <div className="tripsHistory-main">
+            <div className='trips-container'>
+                <div className='trips-title'>All Trips with Details</div>
+                <div className='tripsItem'></div>
 
             </div>
    

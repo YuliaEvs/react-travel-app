@@ -1,9 +1,10 @@
 
 .tripsList-container {
-    margin: 0;
+    top: 80px;
+    left: 10px;
     background-color: rgb(255, 255, 255, .9);
-    width: 550px;
-    justify-content:center;
+    width: 600px;
+    height: fit-content;
     text-align: center;
     color: rgb(40, 40, 40);
     border-radius: 0.5rem;
@@ -30,7 +31,7 @@
     border: 2px;
     padding: 8px 10px;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr 1fr;
 
 }
 
@@ -38,9 +39,10 @@
     justify-content: start;
 }
 
-.bnt-div{
-    gap: 0.5rem;
+.buttons-div {
+    justify-content: space-around;
 }
+
 .newTrip-btn {
     box-sizing: content-box;
     width: 80px;
@@ -63,26 +65,26 @@
 .edit-btn {
     color: green;
     text-align: center;
-    /* border: 1px lighten(gray, 24%); */
-    width: 50px;
+    border: 1px lighten(gray, 24%);
+    width: 60px;
     letter-spacing: .30px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .edit-btn:hover {
     background-color: lighten(green, 48%); 
 }
 
-.remove-btn-btn {
+.remove-btn {
     color: red;
     text-align: center;
-    /* border: 1px lighten(gray, 24%); */
-    width: 50px;
+    border: 1px lighten(gray, 24%);
+    width: 60px;
     letter-spacing: .30px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
-.remove-btn-btn:hover {
+.remove-btn:hover {
     background-color: lighten(red, 48%); 
 }
 

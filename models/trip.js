@@ -8,6 +8,10 @@ const tripSchema = new Schema({
     days: {
       type: Number,
       required: true},
+    createdAt: {
+      type: Date,
+      default: Date.now
+    },
     note: {
       type: String,
       required: true}
